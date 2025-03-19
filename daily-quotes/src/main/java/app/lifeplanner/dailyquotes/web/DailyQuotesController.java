@@ -55,13 +55,11 @@ public class DailyQuotesController {
     // PUT endpoint to update an existing quote using the EditDailyQuotesRequest DTO
     @PutMapping("/{id}")
     public ResponseEntity<EditDailyQuotesRequest> updateDailyQuote(@PathVariable UUID id, @RequestBody EditDailyQuotesRequest editRequest) {
-        // Retrieve the existing quote to ensure we have the userId
         Optional<DailyQuote> existingOpt = dailyQuoteService.getQuoteById(id);
         if(existingOpt.isEmpty()){
             return ResponseEntity.notFound().build();
         }
         DailyQuote existing = existingOpt.get();
-        // If the incoming editRequest has a null userId, copy it from the existing entity
         if(editRequest.getUserId() == null) {
             editRequest.setUserId(existing.getUserId());
         }
