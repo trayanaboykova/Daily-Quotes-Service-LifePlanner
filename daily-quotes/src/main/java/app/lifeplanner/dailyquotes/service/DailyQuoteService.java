@@ -1,5 +1,6 @@
 package app.lifeplanner.dailyquotes.service;
 
+import app.lifeplanner.dailyquotes.exception.EntityNotFoundException;
 import app.lifeplanner.dailyquotes.model.DailyQuote;
 import app.lifeplanner.dailyquotes.repository.DailyQuoteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,15 +36,17 @@ public class DailyQuoteService {
 
     // Update an existing quote
     public DailyQuote updateDailyQuote(DailyQuote dailyQuote) {
-        if (dailyQuoteRepository.existsById(dailyQuote.getId())) {
-            return dailyQuoteRepository.save(dailyQuote);
-        } else {
-            throw new RuntimeException("Quote not found with ID: " + dailyQuote.getId());
+        if (!dailyQuoteRepository.existsById(dailyQuote.getId())) {
+            throw new EntityNotFoundException("Quote not found with ID: " + dailyQuote.getId());
         }
+        return dailyQuoteRepository.save(dailyQuote);
     }
 
     // Delete a quote by ID
     public void deleteDailyQuote(UUID id) {
+        if (!dailyQuoteRepository.existsById(id)) {
+            throw new EntityNotFoundException("Quote not found with ID: " + id);
+        }
         dailyQuoteRepository.deleteById(id);
     }
 }
