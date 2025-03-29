@@ -15,7 +15,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class DailyQuoteMapperUTest {
 
     @Test
-    void testFromEntity() {
+    void givenDailyQuoteEntity_whenFromEntity_thenReturnAddDailyQuoteRequest() {
         // Given
         UUID id = UUID.randomUUID();
         String quoteImage = "sampleImage.png";
@@ -37,7 +37,7 @@ public class DailyQuoteMapperUTest {
     }
 
     @Test
-    void testToEntity_FromAddDto() {
+    void givenAddDailyQuoteRequest_whenToEntity_thenReturnDailyQuote() {
         // Given
         UUID id = UUID.randomUUID();
         String quoteImage = "sampleImage.png";
@@ -59,13 +59,13 @@ public class DailyQuoteMapperUTest {
     }
 
     @Test
-    void testToEntity_FromAddDto_Null() {
+    void givenNullAddDailyQuoteRequest_whenToEntity_thenReturnNull() {
         // When & Then
         assertNull(DailyQuoteMapper.toEntity((AddDailyQuoteRequest) null));
     }
 
     @Test
-    void testFromEntityToEdit() {
+    void givenDailyQuoteEntity_whenFromEntityToEdit_thenReturnEditDailyQuotesRequest() {
         // Given
         UUID id = UUID.randomUUID();
         String quoteImage = "sampleImage.png";
@@ -87,7 +87,7 @@ public class DailyQuoteMapperUTest {
     }
 
     @Test
-    void testToEntity_FromEditDto() {
+    void givenEditDailyQuotesRequest_whenToEntity_thenReturnDailyQuote() {
         // Given
         UUID id = UUID.randomUUID();
         String quoteImage = "sampleImage.png";
@@ -109,7 +109,7 @@ public class DailyQuoteMapperUTest {
     }
 
     @Test
-    void testToEntity_FromEditDto_Null() {
+    void givenNullEditDailyQuotesRequest_whenToEntity_thenReturnNull() {
         // When & Then
         assertNull(DailyQuoteMapper.toEntity((EditDailyQuotesRequest) null));
     }
