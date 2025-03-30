@@ -39,9 +39,8 @@ This microservice focuses on offering a clean and robust API for managing daily 
    ```bash
    git clone https://github.com/yourusername/daily-quotes-microservice.git
    cd daily-quotes-microservice
-2. **Configure the Database:**
-   ```bash
-   Update src/main/resources/application.properties (or application.yml) with your database credentials.
+2. **Configure the Database:** <br>
+   Update `application.properties` (or `application.yml`) with your database credentials.
 3. **Build and Run:**
    ```bash
    mvn clean install
