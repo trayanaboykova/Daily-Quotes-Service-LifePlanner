@@ -47,12 +47,11 @@ This microservice focuses on offering a clean and robust API for managing daily 
    mvn clean install
    mvn spring-boot:run
 3. **Access the API:**
-   The service runs on http://localhost:8081 by default. Use Postman or your favorite REST client to test endpoints like:
-   ```bash
-   GET /api/v1/daily-quotes/user/{userId}
-   POST /api/v1/daily-quotes
-   PUT /api/v1/daily-quotes/{id}
-   DELETE /api/v1/daily-quotes/{id}
+   The service runs on http://localhost:8081 by default. Use Postman or your favorite REST client to test endpoints like: <br> 
+   `GET /api/v1/daily-quotes/user/{userId}` <br>
+   `POST /api/v1/daily-quotes` <br>
+   `PUT /api/v1/daily-quotes/{id}` <br>
+   `DELETE /api/v1/daily-quotes/{id}` <br>
    
 ## 📈 Learning Outcomes
 Working on this microservice enhanced my understanding of designing independent, modular systems that interact seamlessly. I gained valuable experience in creating robust REST APIs, implementing validation and error handling, and integrating microservices using modern Spring technologies.
