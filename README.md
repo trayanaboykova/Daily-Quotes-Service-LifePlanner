@@ -31,7 +31,7 @@ This microservice focuses on offering a clean and robust API for managing daily 
 - **Global Exception Handling:**  
   Centralized error management to provide consistent API responses.
 
-## 🛠️ Technologies I Used  
+## 🛠️ Tech Stack 
 [![Java](https://skillicons.dev/icons?i=java)](https://www.java.com/) [![Spring](https://skillicons.dev/icons?i=spring)](https://spring.io/) [![MySQL](https://skillicons.dev/icons?i=mysql)](https://www.mysql.com/)
 
 ## 🤔 How to Run  
